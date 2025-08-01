@@ -1,11 +1,28 @@
 .container {
     width: 960px;
-    /* height: 960px; */
+    height: 960px;
     border-style: solid;
 }
 
-.div {
+/* .div {
     border-style: solid;
     display: flex;
+    flex-direction: column;
+} */
+
+.col {
+    border-style: dashed;
+    display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.row {
+    border-style: dotted;
+    display: flex;
+    flex-direction: row;
+    height: 6.25dvh;
+    width: 100%;
 }
