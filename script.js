@@ -1,19 +1,20 @@
-const h = (1/16);
-
 const drawingPad = document.querySelector(".container");
-// const drawingCol = document.createElement("div");
-  for (let o = 0; o < 16; o++) { 
-    const drawingRow = document.createElement("div");
-    drawingPad.appendChild(drawingRow);
-    drawingRow.classList.add("row");
-    // drawingRow.textContent = `${o}`;
-    for (let i = 0; i < 16; i++) {
-        let drawingCol = document.createElement("div");
-        drawingRow.appendChild(drawingCol);
-        drawingCol.classList.add("col");
-        // drawingCol.textContent = `${i}`;
-    };
-  };
 
-// drawingPad.appendChild(drawingRow);
-// drawingRow.textContent = 'r';
+for (let i=0; i< 256; i++) {
+  const drawingCell = document.createElement('div');
+  drawingPad.appendChild(drawingCell);
+  drawingCell.classList.add('cell');
+  drawingCell.id=i;
+}
+
+const modrawingCells = document.querySelectorAll(".cell");
+
+modrawingCells.forEach(item => item.addEventListener("mouseover", () => bob(item)));
+
+function bob(item) {
+  console.log(item.id);
+  let element = document.getElementById(item.id);
+  element.style.backgroundColor = 'blue';
+}
+
+
