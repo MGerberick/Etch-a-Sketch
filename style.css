@@ -5,7 +5,7 @@ h1 {
 
 .page {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .container {
@@ -19,4 +19,14 @@ h1 {
 
 .cell {
     border: 0px;
+}
+
+.ui {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 100px;
+    height: 50px;
 }
