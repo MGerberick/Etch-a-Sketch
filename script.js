@@ -1,5 +1,5 @@
 const drawingPad = document.querySelector(".container");
-const gridSize = 100;
+const gridSize = 16;
 
 for (let i=0; i<(gridSize**2); i++) {
   const drawingCell = document.createElement('div');
@@ -12,12 +12,11 @@ for (let i=0; i<(gridSize**2); i++) {
 
 const modrawingCells = document.querySelectorAll(".cell");
 
-modrawingCells.forEach(item => item.addEventListener("mouseover", () => bob(item)));
+modrawingCells.forEach(item => item.addEventListener("mouseover", () => colorCell(item)));
 
-function bob(item) {
-  // console.log(item.id);
+function colorCell(item) {
   let element = document.getElementById(item.id);
-  element.style.backgroundColor = 'blue';
+  element.style.backgroundColor = 'black';
 }
 
 
