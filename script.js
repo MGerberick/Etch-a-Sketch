@@ -18,7 +18,8 @@ function createPad(){
 
     let modrawingCells = document.querySelectorAll(".cell");
 
-    modrawingCells.forEach(item => item.addEventListener("mouseover", () => colorCell(item)));
+    // modrawingCells.forEach(item => item.addEventListener("mouseover", () => colorCell(item)));
+    modrawingCells.forEach(item => item.addEventListener("mouseenter", () => colorCell(item)));
   }
 }
 
@@ -27,7 +28,18 @@ function colorCell(item) {
 
   if (element.style.backgroundColor == '') {
     element.style.backgroundColor = generateRandomRgbColor();
- }
+  }
+  
+  let currentOpacity = parseFloat(element.style.opacity);
+  console.log('currentOpacity: ' + currentOpacity);
+
+  if (isNaN(currentOpacity)) {
+    element.style.opacity = 0.01; 
+  } else {
+    let newOpacity = currentOpacity + 0.01;
+    newOpacity = Math.min(newOpacity, 1.0);
+    element.style.opacity = newOpacity;
+  }
 }
 
 function getUserInput() {
