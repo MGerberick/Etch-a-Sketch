@@ -16,11 +16,10 @@ function createPad(){
     let cellWidth = (960/gridSize)+'px';
     drawingCell.style.width = cellWidth;
 
-    let modrawingCells = document.querySelectorAll(".cell");
-
-    // modrawingCells.forEach(item => item.addEventListener("mouseover", () => colorCell(item)));
-    modrawingCells.forEach(item => item.addEventListener("mouseenter", () => colorCell(item)));
   }
+  let modrawingCells = document.querySelectorAll(".cell");
+
+  modrawingCells.forEach(item => item.addEventListener("mouseenter", () => colorCell(item)));
 }
 
 function colorCell(item) {
@@ -34,9 +33,9 @@ function colorCell(item) {
   console.log('currentOpacity: ' + currentOpacity);
 
   if (isNaN(currentOpacity)) {
-    element.style.opacity = 0.01; 
+    element.style.opacity = 0.1; 
   } else {
-    let newOpacity = currentOpacity + 0.01;
+    let newOpacity = currentOpacity + 0.1;
     newOpacity = Math.min(newOpacity, 1.0);
     element.style.opacity = newOpacity;
   }
